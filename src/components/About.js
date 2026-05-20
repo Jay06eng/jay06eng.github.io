@@ -18,10 +18,10 @@ const About = (props) => {
           }
         />
         <CardContent sx={(th) => ({ fontSize: '132%', lineHeight: '150%', backgroundColor: th.palette.background.paper, color: th.palette.text.secondary, p: '2rem' })}>
-          <Typography variant="body1" paragraph sx={{ textAlign: 'justify' }}>
+          <Typography variant="body1" paragraph sx={{ textAlign: 'center' }}>
             {start}
           </Typography>
-          <Typography variant="body1" sx={{ textAlign: 'justify' }}>{exit}</Typography>
+          <Typography variant="body1" sx={{ textAlign: 'center' }}>{exit}</Typography>
         </CardContent>
       </Card>
     </Box>
