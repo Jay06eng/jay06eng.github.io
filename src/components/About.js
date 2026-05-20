@@ -17,11 +17,11 @@ const About = (props) => {
             </Box>
           }
         />
-        <CardContent sx={{ fontSize: '132%', lineHeight: '150%', backgroundColor: '#F6F6F6', color: '#8e8d8a', p: '2rem' }}>
-          <Typography variant="body1" paragraph>
+        <CardContent sx={(th) => ({ fontSize: '132%', lineHeight: '150%', backgroundColor: th.palette.background.paper, color: th.palette.text.secondary, p: '2rem' })}>
+          <Typography variant="body1" paragraph sx={{ textAlign: 'justify' }}>
             {start}
           </Typography>
-          <Typography variant="body1">{exit}</Typography>
+          <Typography variant="body1" sx={{ textAlign: 'justify' }}>{exit}</Typography>
         </CardContent>
       </Card>
     </Box>

@@ -1,40 +1,28 @@
 import React from 'react';
-import { Box, Button, Chip, Container, Stack, Typography } from '@mui/material';
-import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
-import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
-import SecurityIcon from '@mui/icons-material/Security';
+import { Box, Button, Container, Stack, Typography } from '@mui/material';
 import { useLang } from '../utils/i18n';
-import { withUtm } from '../utils/withUtm';
+
+const LINKEDIN_URL = 'https://www.linkedin.com/in/javierbonillab/';
 
 const UI = {
   en: {
-    h1_a: 'Ship ',
-    h1_b: 'Production ML ',
-    h1_c: 'Faster',
-    sub: 'I design and deploy ML that moves KPIs: LLM assistants, RAG search, AutoML pipelines, and analytics on Azure — from prototype to production.',
-    bullets: [
-      { icon: <RocketLaunchIcon />, label: 'Weeks, not quarters' },
-      { icon: <AutoAwesomeIcon />, label: 'LLMs, RAG, AutoML' },
-      { icon: <SecurityIcon />, label: 'Battle‑tested in production' },
-    ],
-    ctaPrimary: 'Book a Free Intro Call',
+    h1_a: 'From ',
+    h1_b: 'Strategy to AI/ML ',
+    h1_c: 'Delivery',
+    sub: '10+ years at Amazon, Pinterest, and CommonDevOps. TPM driving AI/ML product delivery, platform modernization, and $100M+ in business outcomes.',
+    ctaPrimary: 'Connect on LinkedIn',
+    ctaPrimaryHref: LINKEDIN_URL,
     ctaSecondary: 'See Projects',
-    subject: 'Consulting Inquiry',
     seenIn: 'Experience at',
   },
   es: {
-    h1_a: 'Lleva ',
-    h1_b: 'ML a producción ',
-    h1_c: 'más rápido',
-    sub: 'Diseño e implemento ML que mueve KPIs: asistentes con LLMs, búsqueda RAG, pipelines de AutoML y analítica en Azure — del prototipo a producción.',
-    bullets: [
-      { icon: <RocketLaunchIcon />, label: 'Semanas, no trimestres' },
-      { icon: <AutoAwesomeIcon />, label: 'LLMs, RAG, AutoML' },
-      { icon: <SecurityIcon />, label: 'Probado en producción' },
-    ],
-    ctaPrimary: 'Agendar llamada',
+    h1_a: 'De ',
+    h1_b: 'Estrategia a Entrega AI/ML',
+    h1_c: '',
+    sub: 'Más de 10 años en Amazon, Pinterest y CommonDevOps. TPM impulsando entrega de productos AI/ML, modernización de plataformas y más de $100M en resultados.',
+    ctaPrimary: 'Conectar en LinkedIn',
+    ctaPrimaryHref: LINKEDIN_URL,
     ctaSecondary: 'Ver proyectos',
-    subject: 'Consulta de consultoría',
     seenIn: 'Experiencia en',
   },
 };
@@ -42,10 +30,6 @@ const UI = {
 export default function Hero() {
   const [lang] = useLang();
   const t = UI[lang] || UI.en;
-  const EMAIL = process.env.EMAIL || '';
-  const mailHref = EMAIL
-    ? withUtm(`mailto:${EMAIL}?subject=${encodeURIComponent(t.subject)}`, 'hero_cta')
-    : '#';
 
   return (
     <Box
@@ -94,21 +78,9 @@ export default function Hero() {
             {t.sub}
           </Typography>
 
-          {/* Proof points */}
-          <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5} alignItems="center" justifyContent="center">
-            {t.bullets.map((b, i) => (
-              <Chip key={i} icon={b.icon} label={b.label} color="default" sx={{
-                bgcolor: 'rgba(255,255,255,0.12)',
-                color: '#fff',
-                border: '1px solid rgba(255,255,255,0.25)',
-                fontWeight: 700,
-              }} />
-            ))}
-          </Stack>
-
-          {/* CTAs */}
+{/* CTAs */}
           <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
-            <Button href={mailHref} variant="contained" color="secondary" size="large" aria-label={t.ctaPrimary}>
+            <Button href={t.ctaPrimaryHref} target="_blank" rel="noopener noreferrer" variant="contained" color="secondary" size="large" aria-label={t.ctaPrimary}>
               {t.ctaPrimary}
             </Button>
             <Button component="a" href="/projects" variant="outlined" size="large" sx={{ color: '#fff', borderColor: 'rgba(255,255,255,.5)' }}>

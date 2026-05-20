@@ -31,7 +31,7 @@ const Timeline = ({ items = [], position = 'alternate' }) => {
       '& .MuiTimelineItem-root:before': { flex: 0, padding: 0 }, // remove default gutter line
     }}>
       {items.map((item) => {
-        const { id, date, icon, title, company, description, tags = [] } = item || {};
+        const { id, date, icon, title, company, description, tags = [], url } = item || {};
 
         return (
           <TimelineItem key={id}>
@@ -57,21 +57,38 @@ const Timeline = ({ items = [], position = 'alternate' }) => {
 
             {/* Axis + dot */}
             <TimelineSeparator>
-              <TimelineDot
-                variant="outlined"
-                sx={(th) => ({
-                  borderColor: th.palette.secondary.main,
-                  backgroundColor: th.palette.background.paper,
-                  width: 44,
-                  height: 44,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  boxShadow: '0 2px 8px rgba(0,0,0,.06)'
-                })}
+              <Box
+                component={url ? 'a' : 'span'}
+                href={url || undefined}
+                target={url ? '_blank' : undefined}
+                rel={url ? 'noopener noreferrer' : undefined}
+                sx={{
+                  display: 'inline-flex',
+                  textDecoration: 'none',
+                  ...(url && {
+                    transition: 'transform .2s, box-shadow .2s',
+                    borderRadius: '50%',
+                    '&:hover': { transform: 'scale(1.15)' },
+                  }),
+                }}
               >
-                <Box sx={(th) => ({ fontSize: 22, color: th.palette.secondary.main })}>{icon}</Box>
-              </TimelineDot>
+                <TimelineDot
+                  variant="outlined"
+                  sx={(th) => ({
+                    borderColor: th.palette.secondary.main,
+                    backgroundColor: th.palette.background.paper,
+                    width: 44,
+                    height: 44,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    boxShadow: '0 2px 8px rgba(0,0,0,.06)',
+                    ...(url && { cursor: 'pointer' }),
+                  })}
+                >
+                  <Box sx={(th) => ({ fontSize: 22, color: th.palette.secondary.main })}>{icon}</Box>
+                </TimelineDot>
+              </Box>
               <TimelineConnector sx={(th) => ({ backgroundColor: th.palette.divider, width: 2 })} />
             </TimelineSeparator>
 
@@ -93,23 +110,23 @@ const Timeline = ({ items = [], position = 'alternate' }) => {
                 })}
               >
                 <Stack spacing={0.75}>
-                  <Typography variant="h6" sx={{ fontWeight: 800, letterSpacing: -0.2 }}>
+                  <Typography variant="h6" sx={{ fontWeight: 800, letterSpacing: -0.2, textAlign: 'center' }}>
                     {title}
                   </Typography>
                   {company && (
-                    <Typography variant="subtitle2" sx={{ color: 'text.secondary' }}>
+                    <Typography variant="subtitle1" sx={{ color: 'text.secondary', fontWeight: 600, textAlign: 'center' }}>
                       {company}
                     </Typography>
                   )}
                   {description && (
-                    <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                    <Typography variant="body2" sx={{ color: 'text.secondary', textAlign: 'justify' }}>
                       {description}
                     </Typography>
                   )}
 
                   {/* Tags: compact, high‑contrast but subtle */}
                   {Array.isArray(tags) && tags.length > 0 && (
-                    <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap" sx={{ pt: 0.5 }}>
+                    <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap" justifyContent="center" sx={{ pt: 0.5 }}>
                       {tags.map((t) => (
                         <Chip
                           key={t}

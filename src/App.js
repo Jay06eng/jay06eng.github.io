@@ -7,14 +7,13 @@ import {
   Navigate
 } from 'react-router-dom';
 import { ThemeProvider, CssBaseline, Box } from '@mui/material';
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 
 import theme from './theme';
 import NavBar from './components/NavBar/NavBar';
 import Footer from './components/Footer/Footer';
 import Home from './pages/Home/Home';
 import Projects from './pages/Projects';
-import Blogs from './pages/Blogs';
 import Skills from './pages/Skills/Skills';
 
 
@@ -26,9 +25,7 @@ function AnalyticsTracker() {
   const location = useLocation();
   useEffect(() => {
     if (!process.env.REACT_APP_TRACKING_ID) return;
-    const page = location.pathname + location.search;
-    ReactGA.set({ page });
-    ReactGA.pageview(page);
+    ReactGA.send({ hitType: 'pageview', page: location.pathname + location.search });
   }, [location]);
   return null;
 }
@@ -45,7 +42,6 @@ export default function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/projects" element={<Projects />} />
-              <Route path="/blogs" element={<Blogs />} />
               <Route path="/skills" element={<Skills />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>

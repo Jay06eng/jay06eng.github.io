@@ -1,124 +1,141 @@
 import React from "react";
-import { BsClipboardData } from "react-icons/bs";
-import { DiCodeigniter } from "react-icons/di";
-import { GiCommercialAirplane } from "react-icons/gi";
-import { FaMobileAlt } from "react-icons/fa";
-import { BiRocket } from "react-icons/bi";
+import { FaAmazon } from "react-icons/fa";
+import { SiPinterest } from "react-icons/si";
+import logoXe from "../images/logo_xe2.png";
+import logoCdo from "../images/logo_cdo_nobg.png";
 
 const homeConfig = {
   greeting_i18n: {
     en: (
       <h1 className="heading">
-        Hi! I'm <strong className="main-name"> Rodrigo Arenas</strong>
+        Hi! I'm <strong className="main-name"> Javier Bonilla</strong>
       </h1>
     ),
     es: (
       <h1 className="heading">
-        ¡Hola! Soy <strong className="main-name"> Rodrigo Arenas</strong>
+        ¡Hola! Soy <strong className="main-name"> Javier Bonilla</strong>
       </h1>
     ),
   },
 
   titles_i18n: {
     en: [
-      "ML engineer",
-      "Open Source Contributor",
-      "Backend Developer",
-      "Data Scientist",
-      "Machine Learning Specialist",
-      "Colombian",
+      "Technical Program Manager",
+      "AI/ML Product Delivery",
+      "Strategy & Operations",
+      "Co-Founder @ CommonDevOps",
+      "Amazon & Pinterest Alum",
+      "Based in Seattle, WA",
     ],
     es: [
-      "Científico de Datos",
-      "Especialista en Aprendizaje Automático",
-      "Colaborador de Código Abierto",
-      "Desarrollador Backend",
-      "Ingeniero de ML",
-      "Colombiano",
+      "Technical Program Manager",
+      "Entrega de Productos AI/ML",
+      "Estrategia y Operaciones",
+      "Co-Fundador @ CommonDevOps",
+      "Ex Amazon y Pinterest",
+      "Seattle, WA",
     ],
   },
 
   about_i18n: {
     en: {
       start:
-        "I've been working for over nine years on data science projects. I'm excited by learning new things, contributing to the data science community, and spreading the word of data!",
+        "I'm a Technical Program Manager driving large-scale operational transformations through technical innovation. I am motivated by the challenge of navigating high-ambiguity environments and turning complex problems into measurable, positive business impact across ads, data, e-commerce, and order-to-cash. Delivered $100M in incremental deal value, $9.7M in cost savings, 30% faster planning, 40% shorter invoice-to-payment cycles, and prevention of 80,000 fraud attempts.",
       exit:
-        "I'm fluent at Python, SQL databases, BI tools, and more, with a deep interest in machine learning.",
+        "I am proficient in Python, SQL, and ML workflows, with deep expertise in AI/ML orchestration and automation. I am passionate about bridging the gap between engineering excellence and strategic business growth, especially within the evolving landscape of AI-powered products.",
     },
     es: {
       start:
-        "He trabajado por más de nueve años en proyectos de ciencia de datos. Me entusiasma aprender cosas nuevas, contribuir a la comunidad y compartir conocimiento.",
+        "He pasado más de diez años impulsando transformaciones operativas a gran escala a través de la innovación técnica. Me motiva el desafío de navegar entornos de alta ambigüedad y convertir problemas complejos en impacto empresarial positivo y medible, habiendo logrado hitos como $100M en valor incremental y millones en ahorros.",
       exit:
-        "Domino Python, bases de datos SQL, herramientas de BI y más, con un fuerte interés en el aprendizaje automático.",
+        "Tengo gran dominio de Python, SQL y flujos de trabajo ML, con experiencia profunda en orquestación y automatización de AI/ML. Me apasiona conectar la excelencia en ingeniería con el crecimiento estratégico del negocio, especialmente en el ecosistema de productos impulsados por IA.",
     },
   },
 
-
   workTimeline: [
     {
-      id: "work-4",
-      title: "Sr ML Engineer",
-      title_i18n: { en: "Sr ML Engineer", es: "Sr ML Engineer" },
-      company: "EPAM",
+      id: "work-5",
+      title: "Co-Founder & Sr. TPM, AI/ML",
+      title_i18n: { en: "Co-Founder & Sr. TPM, AI/ML", es: "Co-Fundador y Sr. TPM, AI/ML" },
+      company: "CommonDevOps",
       description_i18n: {
-        en: "Working to build scalable ML solutions, LLMs, and RAG architectures.",
-        es: "Construyo soluciones de ML escalables, LLMs y arquitecturas RAG.",
+        en: "Building AI and deterministic products and scalable ML platform architecture from the ground up.",
+        es: "Construyendo herramientas de soporte de decisiones con IA y arquitectura de plataforma ML escalable desde cero.",
       },
-      date: "2023-Present",
-      icon: <BiRocket />,
-      tags: ["ml", "mlops", "python", "azure", "llm", "automl"],
+      date: "2025-Present",
+      icon: <img src={logoCdo} alt="CommonDevOps" style={{ width: 28, height: 28, objectFit: 'contain', display: 'block', borderRadius: 5, filter: 'hue-rotate(-65deg) saturate(0.9) brightness(0.75)' }} />,
+      url: "https://commondevops.com/",
+      tags: ["ai/ml", "llms", "python", "sdlc", "automation"],
+    },
+    {
+      id: "work-4",
+      title: "Sr. Technical Program Manager",
+      title_i18n: { en: "Sr. Technical Program Manager", es: "Sr. Technical Program Manager" },
+      company: "Xenon arc",
+      description_i18n: {
+        en: "Led CI/CD strategy and D365 platform modernization for 5,000+ users across acquired companies.",
+        es: "Lideré la estrategia CI/CD y modernización de D365 para más de 5,000 usuarios en empresas adquiridas.",
+      },
+      date: "2025",
+      icon: <img src={logoXe} alt="Xenon arc" style={{ width: 30, height: 30, objectFit: 'contain', display: 'block', borderRadius: 5, filter: 'hue-rotate(34deg) saturate(1.1)' }} />,
+      url: "https://www.xenonarc.com/",
+      tags: ["dynamics 365", "azure devops", "ci/cd", "vendor mgmt"],
     },
     {
       id: "work-3",
-      title: "Sr Data Scientist",
-      title_i18n: { en: "Sr Data Scientist", es: "Sr Data Scientist" },
-      company: "Globant",
+      title: "Sr. Strategy & Operations Manager",
+      title_i18n: { en: "Sr. Strategy & Operations Manager", es: "Sr. Gerente de Estrategia y Operaciones" },
+      company: "Pinterest",
       description_i18n: {
-        en: "Built AutoML models and made them available to non-technical users from a graphical interface.",
-        es: "Construí modelos AutoML y los hice accesibles para usuarios no técnicos desde una interfaz gráfica.",
+        en: "Led the end-to-end go-to-market and product development of the Pinterest platform for the advertiser lifecycle, from onboarding to billing.",
+        es: "Impulsé la plataforma del ciclo de vida del anunciante, desbloqueando más de $100M en valor de negocios.",
       },
-      date: "2021-2023",
-      icon: <DiCodeigniter />,
-      tags: ["ml", "automl", "python", "docker", "redshift", "superset"],
+      date: "2022-2024",
+      icon: <SiPinterest />,
+      url: "https://www.pinterest.com/",
+      tags: ["ads revenue ops", "python", "salesforce", "api", "go-to-market"],
     },
     {
       id: "work-2",
-      title: "BI Manager",
-      title_i18n: { en: "BI Manager", es: "BI Manager" },
-      company: "Rappi",
+      title: "Program Manager, People Tech",
+      title_i18n: { en: "Program Manager, People Tech", es: "Program Manager, People Tech" },
+      company: "Amazon",
       description_i18n: {
-        en: "Led a team of analysts and data scientists delivering ETLs, data lakes/warehouses, and ML models.",
-        es: "Lideré un equipo de analistas y científicos de datos para ejecutar proyectos de ETLs, data lakes/warehouses y modelos de ML.",
+        en: "Managed global Time & Attendance transformation programs, automating 1.3M transactions and preventing 500,000+ annual payment errors.",
+        es: "Transformé plataformas globales de Tiempo y Asistencia, automatizando 1.3M de transacciones y ahorrando más de 28 FTEs.",
       },
-      date: "2019-2021",
-      icon: <FaMobileAlt />,
-      tags: ["ml", "airflow", "python", "docker", "snowflake", "postgres", "azure"],
+      date: "2020-2022",
+      icon: <FaAmazon />,
+      url: "https://www.amazon.com/",
+      tags: ["aws", "lean six sigma", "jira", "sdlc"],
     },
     {
       id: "work-1",
-      title: "CRM Analytics Coordinator",
-      title_i18n: { en: "CRM Analytics Coordinator", es: "Coordinador de Analítica CRM" },
-      company: "Avianca",
+      title: "Process Engineering Manager",
+      title_i18n: { en: "Process Engineering Manager", es: "Gerente de Ingeniería de Procesos" },
+      company: "Amazon",
       description_i18n: {
-        en: "Tech lead for BI, Data Science and DBA team. Built forecasting models, a data warehouse and Power BI dashboards.",
-        es: "Líder técnico de un equipo de BI, Ciencia de Datos y DBAs. Construí modelos de pronóstico, data warehouses y tableros en Power BI.",
+        en: "Directed automation programs cutting $9.7M in costs and reducing seller contact volume 400 bps.",
+        es: "Dirigí programas de automatización que redujeron $9.7M en costos y el volumen de contacto de vendedores 400 bps.",
       },
-      date: "2018-2019",
-      icon: <GiCommercialAirplane />,
-      tags: ["ml", "mssql", "python", "docker", "pbi", "azure"],
+      date: "2018-2020",
+      icon: <FaAmazon />,
+      url: "https://www.amazon.com/",
+      tags: ["six sigma black belt", "api", "process automation"],
     },
     {
       id: "work-0",
-      title: "BI Analyst",
-      title_i18n: { en: "BI Analyst", es: "Analista de BI" },
-      company: "Onelink BPO",
+      title: "Process Engineer",
+      title_i18n: { en: "Process Engineer", es: "Ingeniero de Procesos" },
+      company: "Amazon",
       description_i18n: {
-        en: "Built interactive dashboards, ETLs and SQL queries to show company KPIs.",
-        es: "Construí tableros interactivos, ETLs y consultas SQL para mostrar los KPIs de la compañía.",
+        en: "Drove $4M in savings and 22% onboarding improvement through workflow standardization and data analysis.",
+        es: "Generé $4M en ahorros y una mejora del 22% en onboarding mediante estandarización de flujos de trabajo y análisis de datos.",
       },
       date: "2016-2018",
-      icon: <BsClipboardData />,
-      tags: ["python", "mssql", "pbi", "excel"],
+      icon: <FaAmazon />,
+      url: "https://www.amazon.com/",
+      tags: ["process improvement", "data analysis", "project mgmt"],
     },
   ],
 };

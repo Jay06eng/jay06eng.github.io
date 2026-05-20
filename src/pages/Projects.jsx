@@ -27,20 +27,20 @@ import { useLang } from '../utils/i18n';
 
 const UI = {
   en: {
-    seoTitle: 'Projects | Rodrigo Arenas',
-    seoDesc: 'Open-source libraries, systems, and real-world projects by Rodrigo Arenas.',
+    seoTitle: 'Projects | Javier Bonilla',
+    seoDesc: 'AI/ML tools and data projects by Javier Bonilla — TPM & AI/ML product delivery.',
     overline: 'Selected Work',
     title: 'Projects',
     desc:
-      'A curated collection spanning production-grade libraries, data systems, and this website. Filter, search, and explore.',
+      'A curated collection of AI/ML tools and data science projects. Filter, search, and explore.',
     searchPlaceholder: 'Search projects',
     sortRecent: 'Recent',
     sortAZ: 'A → Z',
     ctaView: 'View',
   },
   es: {
-    seoTitle: 'Proyectos | Rodrigo Arenas',
-    seoDesc: 'Librerías open-source, sistemas y proyectos reales de Rodrigo Arenas.',
+    seoTitle: 'Proyectos | Javier Bonilla',
+    seoDesc: 'Herramientas AI/ML y proyectos de ciencia de datos por Javier Bonilla.',
     overline: 'Trabajo destacado',
     title: 'Proyectos',
     desc:
@@ -179,78 +179,9 @@ export default function Projects() {
     <>
       <Seo title={t.seoTitle} description={t.seoDesc} />
 
-      {/* Header */}
-      <Box
-        sx={{
-          background: (th) =>
-            `linear-gradient(180deg, ${th.palette.background.default} 0%, #ffffff 100%)`,
-          borderBottom: '1px solid',
-          borderColor: 'divider',
-          py: { xs: 5, md: 8 },
-        }}
-      >
-        <Container maxWidth="lg">
-          <Stack spacing={2}>
-            <Typography variant="overline" color="secondary.main" fontWeight={800}>
-              {t.overline}
-            </Typography>
-            <Typography variant="h2" sx={{ fontWeight: 900, letterSpacing: -0.8 }}>
-              {t.title}
-            </Typography>
-            <Typography color="text.secondary" maxWidth={720}>
-              {t.desc}
-            </Typography>
-
-            <Stack
-              direction={{ xs: 'column', md: 'row' }}
-              spacing={2}
-              alignItems={{ xs: 'stretch', md: 'center' }}
-            >
-              {/* Category chips */}
-              <Stack direction="row" spacing={1} flexWrap="wrap">
-                {categoryChips.map((c) => (
-                  <Chip
-                    key={c}
-                    label={c}
-                    color={c === category ? 'secondary' : 'default'}
-                    variant={c === category ? 'filled' : 'outlined'}
-                    onClick={() => setCategory(c)}
-                    sx={{ borderRadius: 10 }}
-                  />
-                ))}
-              </Stack>
-
-              <Box sx={{ flexGrow: 1 }} />
-
-              {/* Search + sort */}
-              <Stack direction="row" spacing={1} alignItems="center">
-                <TextField
-                  size="small"
-                  placeholder={t.searchPlaceholder}
-                  value={query}
-                  onChange={(e) => setQuery(e.target.value)}
-                  InputProps={{
-                    startAdornment: (
-                      <InputAdornment position="start">
-                        <SearchIcon fontSize="small" />
-                      </InputAdornment>
-                    ),
-                  }}
-                />
-                <Divider flexItem orientation="vertical" />
-                <Select size="small" value={sort} onChange={(e) => setSort(e.target.value)}>
-                  <MenuItem value="recent">{t.sortRecent}</MenuItem>
-                  <MenuItem value="az">{t.sortAZ}</MenuItem>
-                </Select>
-              </Stack>
-            </Stack>
-          </Stack>
-        </Container>
-      </Box>
-
       {/* Grid */}
       <Container maxWidth="lg" sx={{ py: { xs: 4, md: 6 } }}>
-        <Grid container spacing={3}>
+        <Grid container spacing={3} justifyContent="center">
           {projects.map((p) => (
             <Grid key={p.id} item xs={12} sm={6} md={4}>
               <ProjectCard project={p} lang={lang} />

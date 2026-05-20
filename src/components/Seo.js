@@ -28,6 +28,10 @@ export default function Seo({ title, description, canonical, jsonLd }) {
     ensureMeta('og:title', title, 'property');
     ensureMeta('og:description', description, 'property');
     ensureMeta('og:type', 'website', 'property');
+    ensureMeta('og:site_name', 'Javier Bonilla', 'property');
+    ensureMeta('twitter:card', 'summary_large_image');
+    ensureMeta('twitter:title', title);
+    ensureMeta('twitter:description', description);
 
     if (canonical) {
       let link = head.querySelector('link[rel="canonical"]');

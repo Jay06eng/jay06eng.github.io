@@ -25,7 +25,7 @@ export default function Home() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    name: 'Rodrigo Arenas',
+    name: 'Javier Bonilla',
     url: canonical,
     jobTitle: titles?.[0] || 'Data Scientist',
   };
@@ -37,43 +37,32 @@ export default function Home() {
   return (
     <section>
       <Seo
-        title={lang === 'es' ? 'Rodrigo Arenas — Científico de Datos & Consultor' : 'Rodrigo Arenas — Data Scientist & Consultant'}
+        title="Javier Bonilla Website"
         description={
           lang === 'es'
-            ? 'Consultoría en ML y datos: LLMs, RAG, AutoML, analítica en Azure. Proyectos, artículos y experiencia.'
-            : 'ML & data consulting: LLMs, RAG, AutoML, analytics on Azure. Selected projects, writing, and experience.'
+            ? 'TPM con más de 10 años en Amazon, Pinterest y CommonDevOps. Especializado en entrega de productos AI/ML, modernización de plataformas y operaciones.'
+            : '10+ years at Amazon, Pinterest, and CommonDevOps. TPM driving AI/ML product delivery, platform modernization, and $100M+ in business outcomes.'
         }
         canonical={canonical}
         jsonLd={jsonLd}
       />
 
-      <Hero />
-
-      <Container maxWidth="lg" sx={{ py: 6 }}>
-        <Grid2 container spacing={4} alignItems="center">
-          <Grid2 xs={12} md={6}>
-            {React.isValidElement(greetingNode) ? (
-              <Box sx={{ mb: 1 }}>{greetingNode}</Box>
-            ) : (
-              <Typography variant="h3" sx={{ fontWeight: 800, mb: 1 }}>
-                {greetingNode}
-              </Typography>
-            )}
-            <Box sx={{ color: 'text.secondary', fontSize: 18 }}>
-              <DynamicTyping titles={titles} />
-            </Box>
-          </Grid2>
-          <Grid2 xs={12} md={6}>
-            <About about={about} />
-          </Grid2>
-        </Grid2>
+      <Container maxWidth="lg" sx={{ py: 6, textAlign: 'center' }}>
+        {React.isValidElement(greetingNode) ? (
+          <Box sx={{ mb: 1 }}>{greetingNode}</Box>
+        ) : (
+          <Typography variant="h3" sx={{ fontWeight: 800, mb: 1 }}>
+            {greetingNode}
+          </Typography>
+        )}
+        <Box sx={{ color: 'text.secondary', fontSize: 18, mb: 3 }}>
+          <DynamicTyping titles={titles} />
+        </Box>
+        <About about={about} />
       </Container>
 
       <Container maxWidth="lg" sx={{ pb: 8 }}>
-        <Typography component="h2" variant="h4" sx={{ fontWeight: 800, mb: 3 }}>
-          {ExperienceLabel}
-        </Typography>
-        <Box sx={{ width: '100%', maxWidth: '960px' }}>
+        <Box sx={{ width: '100%', maxWidth: '960px', mx: 'auto' }}>
           <Timeline items={timelineItems} />
         </Box>
       </Container>
