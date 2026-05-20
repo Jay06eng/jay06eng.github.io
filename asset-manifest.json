@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.js": "/portfolio/static/js/main.2aba7acd.js",
-    "static/media/Black Belt cert.jpg": "/portfolio/static/media/Black Belt cert.0bd72d298789770ff26a.jpg",
-    "static/media/logo_xe2.png": "/portfolio/static/media/logo_xe2.06abb70be68d23224a23.png",
-    "static/media/project_credit_line.svg": "/portfolio/static/media/project_credit_line.579783d6dd8f7a2a69d7bead7bada6c6.svg",
-    "static/media/project_prioritization.svg": "/portfolio/static/media/project_prioritization.98bb61f987d4dc5eb8aa753f4ea8f650.svg",
-    "index.html": "/portfolio/index.html",
-    "main.2aba7acd.js.map": "/portfolio/static/js/main.2aba7acd.js.map"
+    "main.js": "/static/js/main.1f69459f.js",
+    "static/media/Black Belt cert.jpg": "/static/media/Black Belt cert.0bd72d298789770ff26a.jpg",
+    "static/media/logo_xe2.png": "/static/media/logo_xe2.06abb70be68d23224a23.png",
+    "static/media/project_credit_line.svg": "/static/media/project_credit_line.579783d6dd8f7a2a69d7bead7bada6c6.svg",
+    "static/media/project_prioritization.svg": "/static/media/project_prioritization.98bb61f987d4dc5eb8aa753f4ea8f650.svg",
+    "index.html": "/index.html",
+    "main.1f69459f.js.map": "/static/js/main.1f69459f.js.map"
   },
   "entrypoints": [
-    "static/js/main.2aba7acd.js"
+    "static/js/main.1f69459f.js"
   ]
 }
