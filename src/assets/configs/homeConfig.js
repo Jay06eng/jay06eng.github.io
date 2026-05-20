@@ -40,7 +40,7 @@ const homeConfig = {
   about_i18n: {
     en: {
       start:
-        "I'm a Technical Program Manager driving large-scale operational transformations through technical innovation. I am motivated by the challenge of navigating high-ambiguity environments and turning complex problems into measurable, positive business impact across ads, data, e-commerce, and order-to-cash. Delivered $100M in incremental deal value, $9.7M in cost savings, 30% faster planning, 40% shorter invoice-to-payment cycles, and prevention of 80,000 fraud attempts.",
+        "I'm a Technical Program Manager driving large-scale operational transformations through technical innovation. I navigate high-ambiguity environments and turn complex problems into measurable, positive business impact across ads, data, e-commerce, and order-to-cash. I've delivered $100M in incremental deal value, $9.7M in cost savings, 30% faster planning, 40% shorter invoice-to-payment cycles, and prevented 80,000 fraud attempts.",
       exit:
         "I am proficient in Python, SQL, and ML workflows, with deep expertise in AI/ML orchestration and automation. I am passionate about bridging the gap between engineering excellence and strategic business growth, especially within the evolving landscape of AI-powered products.",
     },
